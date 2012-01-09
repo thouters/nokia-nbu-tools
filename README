@@ -1,0 +1,8 @@
+(Proof of concept!)
+
+This quick hack converts a nokia mobile phone backup file
+to a mailbox using the python standard library.
+
+Note that the UTF-16 is not implemented; the output messages
+are limited to basic ascii and will contain illegal
+characters.

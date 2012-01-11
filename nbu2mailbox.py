@@ -5,6 +5,8 @@ import sys
 import email.mime
 from email.mime.text import MIMEText
 
+me = "Firstname Lastname <telnr@telephone.local>"
+
 def contacts(fname):
     r  = {}
     f = open(fname)
@@ -77,7 +79,6 @@ def smsread(fname,clist):
         sms['Subject'] = "%s.."% sms["body"][:12] if len(sms["body"]) > 12 else sms["body"]
         nr = telnr(tel).as_inter()
         peer = "%s <%s@telephone.local>"% (clist[nr] if nr in clist else nr, nr)
-        me = "Thomas Langewouters <0032474886865@telephone.local>"
         if sms["mbox"] == "SENT":
             sms['From'] = me
             sms['To'] = peer
